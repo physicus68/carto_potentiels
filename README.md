@@ -11,18 +11,18 @@ L'Arduino Uno R3 est placée sur son bornier, la cuve est alimentée sous 5 volt
 ### Utilisation de l'application
 On se connecte avec Google Chrome ou Opera sur l'application https://physicus68.github.io/carto_potentiels. Attention, le navigateur Firefox ne fonctionne pas avec cette application (novembre 2024 - l'API webserial n'est pas encore implémentée dans Firefox).
 
-On doit d'abord calibrer la caméra pour suivre le repère orange fluo sur la sonde. On passe en mode calibration puis on clique sur le conféti orange visiblme sur l'écran, un spot jaune poursuit l'image du confeti. Esuite on désactive le mode calibration en cliquant sur le bouton.
+On doit d'abord calibrer la caméra pour suivre le repère orange fluo sur la sonde. On passe en mode calibration puis on clique sur le confefti orange visible sur l'écran, un spot jaune poursuit l'image du confetti. Si le suivi du mouvement est satisfaisant, on désactive le mode calibration en cliquant sur le bouton.
 
 L'étape suivante consiste à se connecter sur Arduino Uno qui mesure alors la tension à l'aide de la sonde.
 
-La dernière étape consiste à activerle mode cartographie des lignes isopotentielles, elles s'affichent sur l'écran au fur et à mesure que l'on explore la cuve rhéographique.
+La dernière étape consiste à activer le mode cartographie des lignes isopotentielles. Elles s'affichent sur l'écran au fûr et à mesure que l'on explore la cuve rhéographique.
 
 ## Fabrication du montage
 ### Le bornier pour Arduino
 - planchette 160mm x 100 mm environ
 - trois équerres d'assemblage de 30mm pour fixer les bornes
 - quatre morceaux de tige en bois de 3mm qui passent dans les trous de fixation de l'Arduino
-- 
+- fils de connexion et peigne de connexion
 ### La sonde de mesure
 C'est un simple morceau de fil de fer sur lequel a été soudé une attache parisienne, et sur la tête de laquelle on a collé un confetti  orange fluo. Celui ci a été poinconné avec une perforatrice dans une flêche en carton (fourniture de magasin) puis collé à la colle cyanolite sur le métal.
 Une borne a été vissée sur une boucle à l'extrémité de la sonde.
