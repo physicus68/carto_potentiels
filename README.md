@@ -5,7 +5,7 @@ La cartographie des lignes isopotentielles dans une cuve rhéostatique est réal
 ### Installation du script Arduino 
 Télécharger puis installer le script [voltmetre.ino](https://github.com/physicus68/carto_potentiels/blob/main/arduino/voltmetre/voltmetre.ino) sur une Arduino Uno R3.
 ### Installation du montage
-Une webcam est fixéée à la verticale de la cuve rhéostatique de façon à filmer en plein écran la cuve. L'image sera tournée de 180° par l'application afin de parâitre à l'endroit à l'écran.
+Une webcam est fixéée à la verticale de la cuve rhéostatique de façon à filmer en plein écran la cuve. L'image sera tournée de 180° par l'application afin de paraître à l'endroit à l'écran.
 
 L'Arduino Uno R3 est placée sur son bornier, la cuve est alimentée sous 5 volts et la sonde est reliée à l'endrée A0 de l'Arduino via le bornier.
 ### Utilisation de l'application
