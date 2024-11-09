@@ -1,14 +1,15 @@
-// https://github.com/processing/p5.js/wiki/p5.js-overview#why-cant-i-assign-variables-using-p5-functions-and-variables-before-setup
-
+// position de la video
 let x0 = 245;
 let y0 = 105;
 
+// paramètres caméra
 let webcam;
 let webcam_w = 640;
 let webcam_h = 480;
 let appli_initalisee = false;
 let calque_camera;
 
+// gestion du pointeur et de son suivi
 let coul_track_pointeur = [255, 255, 255];
 let sensibilite = 5000;
 let mode_calibration = false;
@@ -17,11 +18,13 @@ let y_pointeur = webcam_h / 2;
 let calque_pointeur;
 let bouton_mode_calib_pointeur;
 
+// gestion de Arduino Uno R3
 let arduino;
 let bouton_connexion_arduino;
 let arduino_connectee = false;
 let tension = 0.0;
 
+// cartographie des lignes isopotentielles
 let calque_lignes_isopotentielles;
 let bouton_cartographier_lignes;
 let cartographier_les_lignes = false;
@@ -160,30 +163,31 @@ function afficherCarteLignes() {
       arduino.write("m");
       tension = arduino.readUntil("\n");
 
-      let h = (tension / 5.0) * 255;      
+      let h = (tension / 5.0) * 255;
       let c = color(0, 0, h);
 
       let pas = 0.5;
-      let fenetre = 0.025
-      if ( Math.abs(tension - int(tension / pas) * pas) < fenetre) {
+      let fenetre = 0.025;
+      if (Math.abs(tension - int(tension / pas) * pas) < fenetre) {
         calque_lignes_isopotentielles.noStroke();
         calque_lignes_isopotentielles.fill(c);
         calque_lignes_isopotentielles.circle(x_pointeur, y_pointeur, 5);
       }
       image(calque_lignes_isopotentielles, x0, y0);
-      label_tension.html("Tension: "+tension+" V");
+      label_tension.html("Tension: " + tension + " V");
     }
   }
 }
 
+/******************************************************************************
+ *  initialisation au démarrage
+ *****************************************************************************/
 function setup() {
   let canvas_application = createCanvas(900, 600);
   canvas_application.parent("application");
-  background("whitesmoke");
 
-
-  let titre_calib = createP("1) Calibrer le pointeur");
-  titre_calib.position(25,100);
+  let titre_calib = createP("1. Calibrer le pointeur.");
+  titre_calib.position(25, 100);
   titre_calib.parent("application");
 
   bouton_mode_calib_pointeur = createButton("Calibration du pointeur");
@@ -191,8 +195,8 @@ function setup() {
   bouton_mode_calib_pointeur.mousePressed(set_mode_colibration_mire);
   bouton_mode_calib_pointeur.parent("application");
 
-  let titre_connexion = createP("2) Connecter Arduino");
-  titre_connexion.position(25,200);
+  let titre_connexion = createP("2. Connecter Arduino.");
+  titre_connexion.position(25, 200);
   titre_connexion.parent("application");
 
   bouton_connexion_arduino = createButton("Connexion Arduino");
@@ -200,8 +204,10 @@ function setup() {
   bouton_connexion_arduino.mousePressed(connexionArduino);
   bouton_connexion_arduino.parent("application");
 
-  let titre_courbes = createP("3) Tracer les courbes <br>isopotentielles <br>(tous les 0.5 volts)");
-  titre_courbes.position(25,300);
+  let titre_courbes = createP(
+    "3. Tracer les courbes <br>isopotentielles tous <br>les 0.5 volts."
+  );
+  titre_courbes.position(25, 300);
   titre_courbes.parent("application");
 
   bouton_cartographier_lignes = createButton("Lignes isopotentielles");
@@ -209,16 +215,15 @@ function setup() {
   bouton_cartographier_lignes.mousePressed(cartographieLignesIsopotentiels);
   bouton_cartographier_lignes.parent("application");
 
-  label_tension= createP("Tension: ");
-  label_tension.position(25,420);
+  label_tension = createP("Tension: ");
+  label_tension.position(25, 420);
   label_tension.parent("application");
   label_tension.class("label_tension");
 
   let titre = createElement("h1", "Cartographie des lignes isopotentielles");
   titre.parent("application");
-  titre.position(25,20);
+  titre.position(0, 30);
 
-  
   initalisationWebcam(this);
   initialisationPointeur();
   initalisationCarteLignes();
@@ -230,8 +235,10 @@ function rafraichirVues() {
   afficherPointeur();
 }
 
-function draw() {
-  background(220);
+/******************************************************************************
+ *  boucle principale
+ *****************************************************************************/
+function draw() {  
   if (appli_initalisee) {
     rafraichirVues();
   }

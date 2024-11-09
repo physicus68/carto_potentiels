@@ -12,6 +12,9 @@ h1 {
 
 canvas {
   display: block;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
 }
 
 
@@ -21,7 +24,7 @@ canvas {
   font-weight: bold;
 }
 
-.label_tension{
+.label_tension {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   font-size: large;
