@@ -18,8 +18,8 @@ La cartographie des lignes isopotentielles dans une cuve rhéostatique est réal
 ### Utilisation de l'application
 - On se connecte avec Google Chrome ou Opera sur l'application https://physicus68.github.io/carto_potentiels.
 
-  >[!WARNING]
-  >le navigateur Firefox ne fonctionne pas avec cette application (En novembre 2024, l'API webserial n'est pas encore implémentée dans Firefox).
+> [!WARNING]
+> le navigateur Firefox ne fonctionne pas avec cette application (En novembre 2024, l'API webserial n'est pas encore implémentée dans Firefox).
 
 - On doit d'abord calibrer la caméra pour suivre le repère orange fluo sur la sonde. On passe en mode calibration puis on clique sur le confetti orange visible sur l'écran, un spot jaune poursuit alors l'image du confetti. Si le suivi du mouvement est satisfaisant, on désactive le mode calibration en recliquant sur le bouton de calibration.
 
