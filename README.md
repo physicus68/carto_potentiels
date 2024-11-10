@@ -2,7 +2,7 @@
 
 ## Résumé
 
-La cartographie des lignes isopotentielles dans une cuve rhéostatique est réalisée à l'aide d'une platine Arduino servant de voltmètre, et d'une webcam qui suit et enregistre la position de la sonde en temps réel pour tracer la série de lignes isopotentielles sur l'image de la cuve. 
+* * La cartographie des lignes isopotentielles dans une cuve rhéostatique est réalisée à l'aide d'une platine Arduino servant de voltmètre, et d'une webcam qui suit et enregistre la position de la sonde en temps réel pour tracer la série de lignes isopotentielles sur l'image de la cuve. 
 
 ## Mode d'emploi
 
@@ -18,7 +18,7 @@ La cartographie des lignes isopotentielles dans une cuve rhéostatique est réal
 ### Utilisation de l'application
 - On se connecte avec Google Chrome ou Opera sur l'application https://physicus68.github.io/carto_potentiels.
 
-> [!WARNING]
+> [!CAUTION]
 > le navigateur Firefox ne fonctionne pas avec cette application (En novembre 2024, l'API webserial n'est pas encore implémentée dans Firefox).
 
 - On doit d'abord calibrer la caméra pour suivre le repère orange fluo sur la sonde. On passe en mode calibration puis on clique sur le confetti orange visible sur l'écran, un spot jaune poursuit alors l'image du confetti. Si le suivi du mouvement est satisfaisant, on désactive le mode calibration en recliquant sur le bouton de calibration.
@@ -41,7 +41,10 @@ Le bornier peut être un dispositif commercial (module Grove avec shield Grove p
 - une planchette 160mm x 100 mm environ.
 - trois équerres d'assemblage de 30mm pour fixer les bornes.
 - quatre morceaux de tige en bois de 3mm (pique à brochette) qui passent dans les trous de fixation de l'Arduino.
-- fils de connexion et barette de connexion (une des pates est pliée ou munie d'un tube en plastique collé qui sert de détrompeur pour le branchement sur la platine Arduino). Les fils de connexions sont liés entre eux, et le faisceau ainsi obtenu est lié à une agraphe enfoncée dans la planche.
+- fils de connexion et barette de connexion
+
+> [!TIP]
+> Une des pates est pliée ou munie d'un tube en plastique collé qui sert de détrompeur pour le branchement sur la platine Arduino. Les fils de connexions sont liés entre eux, et le faisceau ainsi obtenu est lié à une agraphe enfoncée dans la planche.
   
 ![Platine et sonde seules](photos/platine_seule.jpg)
 
