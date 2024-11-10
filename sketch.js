@@ -29,6 +29,8 @@ let calque_lignes_isopotentielles;
 let bouton_cartographier_lignes;
 let cartographier_les_lignes = false;
 let label_tension;
+let pas = 0.5; // pas de tension entre les lignes de potentiel
+let fenetre = 0.025; // tolérence pour la mesure de la ligne de potentiel
 
 function initalisationWebcam(p5) {
   let constraints = {
@@ -74,18 +76,18 @@ function afficherPointeur() {
     let buf_x = 0;
     let buf_y = 0;
     let i,
-      r,
-      g,
-      b,
+      delta_r,
+      delta_v,
+      delta_b,
       distance = 0;
     let n = 0;
     for (let y = 0; y < webcam_h; y++) {
       for (let x = 0; x < webcam_w; x++) {
         i = 4 * (x + webcam_w * y);
-        r = calque_camera.pixels[i] - coul_track_pointeur[0];
-        g = calque_camera.pixels[i + 1] - coul_track_pointeur[1];
-        b = calque_camera.pixels[i + 2] - coul_track_pointeur[2];
-        distance = r * r + g * g + b * b;
+        delta_r = calque_camera.pixels[i] - coul_track_pointeur[0];
+        delta_v = calque_camera.pixels[i + 1] - coul_track_pointeur[1];
+        delta_b = calque_camera.pixels[i + 2] - coul_track_pointeur[2];
+        distance = delta_r ** 2 + delta_v ** 2 + delta_b ** 2;
         if (distance < sensibilite) {
           n = n + 1;
           buf_x = buf_x + x;
@@ -95,16 +97,12 @@ function afficherPointeur() {
     }
     x_pointeur = buf_x / n;
     y_pointeur = int(buf_y / n);
-    //buf_x = 0;
-    buf_y = 0;
 
     // on affiche le pointeur sur le calque
     calque_pointeur.clear();
     calque_pointeur.fill("yellow");
     calque_pointeur.noStroke();
     calque_pointeur.circle(x_pointeur, y_pointeur, 7);
-    buf_x = 0;
-    n = 0;
   }
 
   image(calque_pointeur, x0, y0);
@@ -160,14 +158,13 @@ function cartographieLignesIsopotentiels() {
 function afficherCarteLignes() {
   if (cartographier_les_lignes) {
     if (arduino_connectee) {
+      // on lit la tension mesurée par la sonde dans la cuve
       arduino.write("m");
       tension = arduino.readUntil("\n");
 
+      // on trace un point proche d'une ligne isopotentielle      
       let h = (tension / 5.0) * 255;
-      let c = color(0, 0, h);
-
-      let pas = 0.5;
-      let fenetre = 0.025;
+      let c = color(0, 0, h);      
       if (Math.abs(tension - int(tension / pas) * pas) < fenetre) {
         calque_lignes_isopotentielles.noStroke();
         calque_lignes_isopotentielles.fill(c);
@@ -189,6 +186,10 @@ function setup() {
   let titre_calib = createP("1. Calibrer le pointeur.");
   titre_calib.position(25, 100);
   titre_calib.parent("application");
+
+  let titre = createElement("h1", "Cartographie des lignes isopotentielles");
+  titre.parent("application");
+  titre.position(0, 30);
 
   bouton_mode_calib_pointeur = createButton("Calibration du pointeur");
   bouton_mode_calib_pointeur.position(25, 150);
@@ -220,26 +221,18 @@ function setup() {
   label_tension.parent("application");
   label_tension.class("label_tension");
 
-  let titre = createElement("h1", "Cartographie des lignes isopotentielles");
-  titre.parent("application");
-  titre.position(0, 30);
-
   initalisationWebcam(this);
   initialisationPointeur();
   initalisationCarteLignes();
 }
 
-function rafraichirVues() {
-  afficherCamera();
-  afficherCarteLignes();
-  afficherPointeur();
-}
-
 /******************************************************************************
  *  boucle principale
  *****************************************************************************/
-function draw() {  
+function draw() {
   if (appli_initalisee) {
-    rafraichirVues();
+    afficherCamera();
+    afficherCarteLignes();
+    afficherPointeur();
   }
 }
