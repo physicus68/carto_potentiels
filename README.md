@@ -14,7 +14,7 @@ La cartographie des lignes isopotentielles dans une cuve rhéostatique est réal
 - Une webcam est fixée à la verticale de la cuve rhéostatique de façon à filmer en plein écran la cuve. L'image sera tournée de 180° par l'application afin de paraître à l'endroit à l'écran.
 
 - L'Arduino Uno R3 est placée sur son bornier, la cuve est alimentée sous 5 volts et la sonde est reliée à l'endrée A0 de l'Arduino via le bornier.
-- 
+  
 ### Utilisation de l'application
 - On se connecte avec Google Chrome ou Opera sur l'application https://physicus68.github.io/carto_potentiels. /!\ Attention /!\ le navigateur Firefox ne fonctionne pas avec cette application (En novembre 2024, l'API webserial n'est pas encore implémentée dans Firefox).
 
@@ -28,7 +28,7 @@ La cartographie des lignes isopotentielles dans une cuve rhéostatique est réal
 
 ### La sonde de mesure
 
-- C'est un simple morceau de fil de fer d'environ 20cm de long initialement, sur lequel a été soudé une attache parisienne, et sur la tête de laquelle on a collé un confetti orange fluo. Celui ci a été poinconné avec une perforatrice dans une flêche orange fluo en carton (fourniture de vitrine de magasin) puis collé à la colle cyanolite sur le métal.
+- C'est un simple morceau de fil de fer d'environ 20cm de long initialement, sur lequel a été soudé une attache parisienne, et sur la tête de laquelle on a collé un confetti orange fluo. Celui ci a été poinçonné avec une perforatrice dans une flêche orange fluo en carton (fourniture de vitrine de magasin) puis collé à la colle cyanolite sur le métal.
 
 - Une borne a été fermement vissée sur une boucle à l'extrémité de la sonde.
 
