@@ -2,7 +2,7 @@
 
 ## Résumé
 
-* * La cartographie des lignes isopotentielles dans une cuve rhéostatique est réalisée à l'aide d'une platine Arduino servant de voltmètre, et d'une webcam qui suit et enregistre la position de la sonde en temps réel pour tracer la série de lignes isopotentielles sur l'image de la cuve. 
+_ La cartographie des lignes isopotentielles dans une cuve rhéostatique est réalisée à l'aide d'une platine Arduino servant de voltmètre, et d'une webcam qui suit et enregistre la position de la sonde en temps réel pour tracer la série de lignes isopotentielles sur l'image de la cuve._ 
 
 ## Mode d'emploi
 
