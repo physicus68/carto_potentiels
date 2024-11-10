@@ -32,12 +32,15 @@ _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réa
 ### La sonde de mesure
 
 - C'est un simple morceau de fil de fer d'environ 20cm de long, sur lequel a été soudée une attache parisienne, et sur la tête de laquelle on a collé un confetti orange fluo. Celui ci a été poinçonné avec une perforatrice dans une flêche orange fluo en carton (fourniture de vitrine de magasin) puis collé à la colle cyanolite sur le métal.
+> [!TIP]
+> Pour souder à l'étain sur le fil de fer ou sur l'attache parisienne, il faut nettoyer la surface avec un décapant (flux de soudure, ou flux pour brasure disponnible au rayon plomberie d'un magazin de bricolage), 
 
 - Une borne a été fermement vissée sur une boucle à l'extrémité de la sonde.
 
 ### Le bornier pour Arduino
 
 Le bornier peut être un dispositif commercial (module Grove avec shield Grove pour Arduino Uno). On peut aussi se fabriquer un tel bornier en utilisant:
+
 - une planchette 160mm x 100 mm environ.
 - trois équerres d'assemblage de 30mm pour fixer les bornes.
 - quatre morceaux de tige en bois de 3mm (pique à brochette) qui passent dans les trous de fixation de l'Arduino.
@@ -47,9 +50,10 @@ Le bornier peut être un dispositif commercial (module Grove avec shield Grove p
 > Une des pates est pliée ou munie d'un tube en plastique collé qui sert de détrompeur pour le branchement sur la platine Arduino. Les fils de connexions sont liés entre eux, et le faisceau ainsi obtenu est lié à une agraphe enfoncée dans la planche.
   
 ![Platine et sonde seules](photos/platine_seule.jpg)
+*Platine et sonde seules*
 
 ![Platine et sonde avec une Arduino montée](photos/platine_avec_arduino.jpg)
-
+*Platine et sonde avec une Arduino montée*
  
 
 
