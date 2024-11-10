@@ -37,12 +37,11 @@ _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réa
 > Pour souder à l'étain sur le fil de fer ou sur l'attache parisienne, il faut nettoyer la surface avec un décapant (flux de soudure, ou flux pour brasure disponnible au rayon plomberie d'un magazin de bricolage). 
 
 > [!TIP]
-> Pour avoir un fil de fer bien rectiligne, on coupe un morceau d'environ 2m de long, on bloque fermement une extrémité dans un étau, et l'autre dans le mandrin d'une perceuse viseuse-dévisseuse. On tend le fil de fer et on démarre doucement la perceuse  pour faire quelques tours. Rapidement, en se tourdant sur lui même, le fil de fer devient rigide et rectiligne. Il faut cependant faire très attention lors de cette opération au risque de rupture du fil qui pourra frapper toute personne ou objet à proximité. Ayez des équipements de protections (vetements couvrants et lunettes de sécurité).
-
+> Pour avoir un fil de fer bien rectiligne, on coupe un morceau d'environ 2m de long, on bloque fermement une extrémité dans un étau, et l'autre dans le mandrin d'une perceuse visseuse-dévisseuse. On tend le fil de fer et on démarre doucement la perceuse  pour faire quelques tours. Rapidement, sous l'effet de la torsion, le fil de fer devient rigide et rectiligne. Il faut cependant faire très attention lors de cette opération au risque de rupture du fil qui pourrait frapper toute personne ou objet à proximité. Ayez des équipements de protections (vêtements couvrants et lunettes de sécurité).
 
 - Une borne a été fermement vissée sur une boucle à l'extrémité de la sonde.
 
-### Le bornier pour Arduino
+### Le bornier pour Arduino Uno R3
 
 Le bornier peut être un dispositif commercial (module Grove avec shield Grove pour Arduino Uno). On peut aussi se fabriquer un tel bornier en utilisant:
 
@@ -57,6 +56,8 @@ Le bornier peut être un dispositif commercial (module Grove avec shield Grove p
 ![Platine et sonde seules](photos/platine_seule.jpg)
 
 *Platine et sonde seules*
+
+
 
 ![Platine et sonde avec une Arduino montée](photos/platine_avec_arduino.jpg)
 
