@@ -28,7 +28,7 @@ La cartographie des lignes isopotentielles dans une cuve rhéostatique est réal
 
 ### La sonde de mesure
 
-- C'est un simple morceau de fil de fer d'environ 20cm de long initialement, sur lequel a été soudé une attache parisienne, et sur la tête de laquelle on a collé un confetti orange fluo. Celui ci a été poinçonné avec une perforatrice dans une flêche orange fluo en carton (fourniture de vitrine de magasin) puis collé à la colle cyanolite sur le métal.
+- C'est un simple morceau de fil de fer d'environ 20cm de long, sur lequel a été soudée une attache parisienne, et sur la tête de laquelle on a collé un confetti orange fluo. Celui ci a été poinçonné avec une perforatrice dans une flêche orange fluo en carton (fourniture de vitrine de magasin) puis collé à la colle cyanolite sur le métal.
 
 - Une borne a été fermement vissée sur une boucle à l'extrémité de la sonde.
 
