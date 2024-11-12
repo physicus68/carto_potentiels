@@ -18,7 +18,7 @@ _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réa
 
   ![Vue générale](photos/vue_generale.jpg)
 
-- L'Arduino Uno R3 est placée sur son bornier, la cuve est alimentée sous 5 volts et la sonde est reliée à l'endrée A0 de l'Arduino via le bornier.
+- L'Arduino Uno R3 est placée sur son bornier, la cuve est alimentée sous 5 volts et la sonde est reliée à l'entrée A0 de l'Arduino via le bornier.
 
   ![Câblage Arduino](photos/vue_arduino.jpg)
   
