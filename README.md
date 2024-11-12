@@ -34,6 +34,9 @@ _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réa
 
 - La dernière étape consiste à activer le mode cartographie des lignes isopotentielles. Elles s'affichent sur l'écran au fûr et à mesure que l'on explore la cuve rhéographique. Par défaut, le pas entre deux lignes est de 0.5 volts.
 
+> [!CAUTION]
+> la caméra a parfois du mal à suivre le confetti orange, si il existe des couleurs rouges ou orange visibles dans le champ de la caméra: il faut alors éviter de mettre ses mains visibles sous la caméra, et cacher sous des feuilles de papier les lames de cuivre, il faut aussi masquer la borne rouge et le câble rouge sous une feuille
+
   ![Exploration des potentiels dans la cuve](photos/vue_cuve_durant_scan.jpg)
 
   ![Exemple d'enregistrement](photos/ecran_vue_spot.jpg)
