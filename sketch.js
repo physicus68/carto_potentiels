@@ -11,7 +11,7 @@ let calque_camera;
 
 // gestion du pointeur et de son suivi
 let coul_track_pointeur = [255, 255, 255];
-let sensibilite = 5000;
+let sensibilite = 500;
 let mode_calibration = false;
 let x_pointeur = webcam_w / 2;
 let y_pointeur = webcam_h / 2;
@@ -78,7 +78,7 @@ function afficherPointeur() {
     let i,
       delta_r,
       delta_v,
-      delta_b,
+      delta_b,      
       distance = 0;
     let n = 0;
     for (let y = 0; y < webcam_h; y++) {
@@ -98,11 +98,12 @@ function afficherPointeur() {
     x_pointeur = buf_x / n;
     y_pointeur = int(buf_y / n);
 
-    // on affiche le pointeur sur le calque
+    // on affiche le pointeur sur le calque    
     calque_pointeur.clear();
     calque_pointeur.fill("yellow");
     calque_pointeur.noStroke();
     calque_pointeur.circle(x_pointeur, y_pointeur, 7);
+    
   }
 
   image(calque_pointeur, x0, y0);
@@ -110,7 +111,7 @@ function afficherPointeur() {
 
 function mouseClicked() {
   if (mode_calibration) {
-    coul_track_pointeur = get(mouseX, mouseY);
+    coul_track_pointeur = get(mouseX, mouseY);    
   }
 }
 
@@ -236,3 +237,4 @@ function draw() {
     afficherPointeur();
   }
 }
+
