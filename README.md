@@ -4,6 +4,9 @@
 
 _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réalisée à l'aide d'une platine Arduino servant de voltmètre, et d'une webcam qui suit et enregistre la position de la sonde en temps réel pour tracer la série de lignes isopotentielles sur l'image de la cuve._ 
 
+![Exemple d'enregistrement](photos/ecran_vue_spot.jpg)
+
+
 ## Mode d'emploi
 
 ### Installation du script Arduino 
@@ -13,7 +16,11 @@ _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réa
 ### Installation du montage
 - Une webcam est fixée à la verticale de la cuve rhéostatique de façon à filmer en plein écran la cuve. L'image sera tournée de 180° par l'application afin de paraître à l'endroit à l'écran.
 
+  ![Vue générale](photos/vue_generale.jpg)
+
 - L'Arduino Uno R3 est placée sur son bornier, la cuve est alimentée sous 5 volts et la sonde est reliée à l'endrée A0 de l'Arduino via le bornier.
+
+  ![Câblage Arduino](photos/vue_arduino.jpg)
   
 ### Utilisation de l'application
 - On se connecte avec Google Chrome ou Opera sur l'application https://physicus68.github.io/carto_potentiels.
@@ -26,6 +33,11 @@ _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réa
 - L'étape suivante consiste à se connecter sur Arduino Uno qui mesure alors la tension dans la cuve à l'aide de la sonde.
 
 - La dernière étape consiste à activer le mode cartographie des lignes isopotentielles. Elles s'affichent sur l'écran au fûr et à mesure que l'on explore la cuve rhéographique. Par défaut, le pas entre deux lignes est de 0.5 volts.
+
+  ![Exploration des potentiels dans la cuve](photos/vue_cuve_durant_scan.jpg)
+
+  ![Exemple d'enregistrement](photos/ecran_vue_spot.jpg)
+  
 
 ## Fabrication du montage
 
