@@ -75,11 +75,12 @@ Le bornier peut être un dispositif commercial (module Grove avec shield Grove p
 
 
 ![Platine et sonde avec une Arduino montée](photos/platine_avec_arduino.jpg)
-Le câble a été fabriqué par mon collègue J.DBourlier du lycée Louis Armand.
 
 *Platine et sonde avec une Arduino montée*
  
 ### Arduino Uno R3 avec shield Grove et câble "fait maison"
+
+Un exemple de montage, avec une platine Arduino équipée d'un shiel grove et d'un câble "fait maison". Le câble a été fabriqué par mon collègue J.D. Bourlier du lycée Louis Armand.
 
 ![montage avec platine grove](photos/montage_lla.jpg)
 
