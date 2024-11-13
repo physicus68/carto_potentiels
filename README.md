@@ -58,7 +58,7 @@ _La cartographie des lignes isopotentielles dans une cuve rhéostatique est réa
 
 ### Le bornier pour Arduino Uno R3
 
-Le bornier peut être un dispositif commercial (module Grove avec shield Grove pour Arduino Uno). On peut aussi se fabriquer un tel bornier en utilisant:
+Le bornier peut être un dispositif commercial (module Grove avec shield Grove pour Arduino Uno, voir en bas de page un exemple). On peut aussi se fabriquer un tel bornier en utilisant:
 
 - une planchette 160mm x 100 mm environ.
 - trois équerres d'assemblage de 30mm pour fixer les bornes.
