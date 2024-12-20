@@ -11,7 +11,8 @@ let calque_camera;
 
 // gestion du pointeur et de son suivi
 let coul_track_pointeur = [255, 255, 255];
-let sensibilite = 500;
+let h_track_pointeur = 0; 
+let H_sensibilite = 0.0075;
 let mode_calibration = false;
 let x_pointeur = webcam_w / 2;
 let y_pointeur = webcam_h / 2;
@@ -76,25 +77,28 @@ function afficherPointeur() {
     let buf_x = 0;
     let buf_y = 0;
     let i,
-      delta_r,
-      delta_v,
-      delta_b,      
+      cam_r,
+      cam_g,
+      cam_b,
+      cam_H,
       distance = 0;
     let n = 0;
     for (let y = 0; y < webcam_h; y++) {
       for (let x = 0; x < webcam_w; x++) {
         i = 4 * (x + webcam_w * y);
-        delta_r = calque_camera.pixels[i] - coul_track_pointeur[0];
-        delta_v = calque_camera.pixels[i + 1] - coul_track_pointeur[1];
-        delta_b = calque_camera.pixels[i + 2] - coul_track_pointeur[2];
-        distance = delta_r ** 2 + delta_v ** 2 + delta_b ** 2;
-        if (distance < sensibilite) {
+        cam_r = calque_camera.pixels[i];
+        cam_g = calque_camera.pixels[i + 1];
+        cam_b = calque_camera.pixels[i + 2];
+        cam_H = rgb2hsl(cam_r,cam_g,cam_b);
+        distance = (cam_H[0] - h_track_pointeur[0])**2+(cam_H[1] - h_track_pointeur[1])**2+(cam_H[2] - h_track_pointeur[2])**2;
+        if (distance**2 < H_sensibilite**2) {                              
           n = n + 1;
           buf_x = buf_x + x;
-          buf_y = buf_y + y;
+          buf_y = buf_y + y;          
         }
       }
     }
+    
     x_pointeur = buf_x / n;
     y_pointeur = int(buf_y / n);
 
@@ -109,9 +113,40 @@ function afficherPointeur() {
   image(calque_pointeur, x0, y0);
 }
 
+function rgb2hsl(r,g,b){
+  r = r / 255;
+  g = g / 255 ;
+  b = b / 255;
+  var max = Math.max(r,g,b);
+  var min = Math.min( r,g,b);
+  var h,s,l = (max + min) / 2;
+
+  if( max == min){
+    h=hs= 0;
+  }else{
+    var d = max - min;
+    s = l > 0.5 ? d/(2-max - min) : d/(max+min);
+    switch( max){
+      case r:
+        h = (g - b)/d + (g < b? 6:0);
+        break;
+        case g:  
+        h = (b - r)/d + 2;
+        break;
+        case b:  
+        h = (r - g)/d + 4;
+        break;
+    }
+    h = h / 6 ;
+  }
+  return [h,s,l];
+}
+
 function mouseClicked() {
   if (mode_calibration) {
-    coul_track_pointeur = get(mouseX, mouseY);    
+    coul_track_pointeur = get(mouseX, mouseY);  
+    h_track_pointeur = rgb2hsl(coul_track_pointeur[0],coul_track_pointeur[1],coul_track_pointeur[2])  
+    
   }
 }
 
